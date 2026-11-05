@@ -105,7 +105,7 @@ export default function Navbar({ onOpenCvModal, isApiLive = false }: NavbarProps
                   ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
                   : 'bg-amber-500/10 text-amber-300 border-amber-500/30'
               }`}
-              title={isApiLive ? 'Backend API Wispbyte đang kết nối' : 'Đang dùng dữ liệu cache / fallback'}
+              title={isApiLive ? 'Backend API NestJS đang kết nối' : 'Đang dùng dữ liệu cache / fallback'}
             >
               <span
                 className={`h-2 w-2 rounded-full ${

@@ -32,7 +32,7 @@ export default function Footer({ isApiLive = false }: FooterProps) {
                 }`}
               />
               <span className={isApiLive ? 'text-emerald-400' : 'text-amber-400'}>
-                API: {isApiLive ? 'Live (Wispbyte Connected)' : 'Cached / Local Ready'}
+                API: {isApiLive ? 'Live (NestJS Connected)' : 'Cached / Local Ready'}
               </span>
             </div>
 

@@ -37,7 +37,7 @@ export default function AboutSection({ profile }: AboutSectionProps) {
       icon: <Server className="w-5 h-5 text-amber-400" />,
       title: 'Backend NestJS & Clean Architecture',
       description:
-        'Áp dụng kiến trúc module hoá chuẩn mực của NestJS (Controller, Service, Entity). Xây dựng RESTful API chặt chẽ, xác thực dữ liệu qua DTO, xử lý CORS và triển khai mượt mà trên hosting Wispbyte.',
+        'Áp dụng kiến trúc module hoá chuẩn mực của NestJS (Controller, Service, Entity). Xây dựng RESTful API chặt chẽ, xác thực dữ liệu qua DTO, xử lý CORS và tối ưu kết nối.',
     },
     {
       icon: <Database className="w-5 h-5 text-emerald-400" />,
@@ -88,7 +88,7 @@ export default function AboutSection({ profile }: AboutSectionProps) {
                 <strong className="text-white">{profile.university}</strong>. Với đam mê mãnh liệt dành cho công nghệ web, mục tiêu hàng đầu của tôi là xây dựng những hệ sinh thái web Full-Stack hoàn chỉnh, từ giao diện người dùng sống động cho đến hệ thống backend vững chắc và cơ sở dữ liệu tin cậy.
               </p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Thay vì dừng lại ở việc tạo giao diện tĩnh, tôi tập trung vào kiến trúc phân tầng độc lập: Frontend Next.js tương tác REST API với Backend NestJS và lưu trữ trên nền tảng đám mây Neon PostgreSQL, sẵn sàng cho môi trường thực tế như Wispbyte.
+                Thay vì dừng lại ở việc tạo giao diện tĩnh, tôi tập trung vào kiến trúc phân tầng độc lập: Frontend Next.js tương tác REST API với Backend NestJS và lưu trữ trên nền tảng đám mây Neon PostgreSQL, sẵn sàng cho môi trường thực tế.
               </p>
 
               <div className="pt-2 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
@@ -106,7 +106,7 @@ export default function AboutSection({ profile }: AboutSectionProps) {
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>Triển khai Node.js Hosting Wispbyte</span>
+                  <span>Đóng gói Hosting &amp; Cloud Ready</span>
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function AboutSection({ profile }: AboutSectionProps) {
               <div className="bg-[#090d16] p-3 rounded-xl border border-white/5 space-y-1 text-slate-300 text-[11px]">
                 <div className="text-orange-400 font-bold">Client (Next.js 14 App Router)</div>
                 <div className="text-slate-500">  ↓ REST API (HTTPS / CORS Enabled)</div>
-                <div className="text-blue-400 font-bold">Backend (NestJS API on Wispbyte)</div>
+                <div className="text-blue-400 font-bold">Backend (NestJS API RESTful)</div>
                 <div className="text-slate-500">  ↓ TypeORM (sslmode=require)</div>
                 <div className="text-emerald-400 font-bold">Database (Neon Serverless PostgreSQL)</div>
               </div>

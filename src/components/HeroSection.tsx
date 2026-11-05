@@ -209,7 +209,7 @@ export default function HeroSection({ profile, onOpenCvModal }: HeroSectionProps
                         ],
                       </div>
                       <div>
-                        <span className="text-blue-300">"hosting"</span>: <span className="text-purple-300">"Wispbyte (Node.js)"</span>,
+                        <span className="text-blue-300">"database"</span>: <span className="text-purple-300">"Neon PostgreSQL"</span>,
                       </div>
                       <div>
                         <span className="text-blue-300">"status"</span>: <span className="text-emerald-400">"Ready for Opportunities"</span>
