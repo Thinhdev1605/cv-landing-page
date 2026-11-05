@@ -17,7 +17,7 @@ export default function Navbar({ onOpenCvModal, isApiLive = false }: NavbarProps
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['about', 'skills', 'projects', 'education', 'contact'];
+      const sections = ['about', 'services', 'skills', 'projects', 'education', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -39,6 +39,7 @@ export default function Navbar({ onOpenCvModal, isApiLive = false }: NavbarProps
 
   const navLinks = [
     { href: '#about', label: 'Giới thiệu', id: 'about' },
+    { href: '#services', label: 'Dịch vụ', id: 'services' },
     { href: '#skills', label: 'Kỹ năng', id: 'skills' },
     { href: '#projects', label: 'Dự án', id: 'projects' },
     { href: '#education', label: 'Học vấn', id: 'education' },

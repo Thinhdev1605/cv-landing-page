@@ -47,3 +47,14 @@ export interface Project {
   is_featured: boolean;
 }
 
+export interface Service {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+  pricing_note?: string;
+  sort_order: number;
+}
+
+

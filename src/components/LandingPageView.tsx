@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Profile, GroupedSkills, Project } from '@/types';
+import { Profile, GroupedSkills, Project, Service } from '@/types';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import ServicesSection from '@/components/ServicesSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import EducationSection from '@/components/EducationSection';
@@ -14,6 +15,7 @@ import CvModal from '@/components/CvModal';
 
 interface LandingPageViewProps {
   initialProfile: Profile;
+  initialServices: Service[];
   initialSkills: GroupedSkills[];
   initialProjects: Project[];
   isApiLive: boolean;
@@ -21,6 +23,7 @@ interface LandingPageViewProps {
 
 export default function LandingPageView({
   initialProfile,
+  initialServices,
   initialSkills,
   initialProjects,
   isApiLive,
@@ -42,6 +45,7 @@ export default function LandingPageView({
           onOpenCvModal={() => setIsCvModalOpen(true)}
         />
         <AboutSection profile={initialProfile} />
+        <ServicesSection services={initialServices} />
         <SkillsSection groupedSkills={initialSkills} />
         <ProjectsSection projects={initialProjects} />
         <EducationSection />

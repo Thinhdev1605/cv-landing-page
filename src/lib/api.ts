@@ -1,4 +1,4 @@
-import { Profile, Skill, GroupedSkills, Project } from '@/types';
+import { Profile, Skill, GroupedSkills, Project, Service } from '@/types';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -158,6 +158,81 @@ export async function getSkillsGrouped(): Promise<{ data: GroupedSkills[]; isLiv
     console.warn('⚠️ [API Skills] Không thể kết nối API Backend, sử dụng dữ liệu fallback:', err);
   }
   return { data: FALLBACK_GROUPED_SKILLS, isLive: false };
+}
+
+export const FALLBACK_SERVICES: Service[] = [
+  {
+    id: 1,
+    title: 'Thiết Kế & Lập Trình Website Full-Stack',
+    description: 'Xây dựng các trang web hiện đại, chuẩn UI/UX, tối ưu SEO và tương thích 100% trên thiết bị di động bằng Next.js, React và Tailwind CSS.',
+    icon: 'globe',
+    features: [
+      'Giao diện One-Page & Multi-Page mượt mà',
+      'Tối ưu điểm số Google Lighthouse > 90',
+      'Tích hợp hiệu ứng hoạt họa và tương tác hiện đại',
+      'Kết nối API động và quản lý trạng thái mượt mà',
+    ],
+    pricing_note: 'Theo quy mô dự án',
+    sort_order: 1,
+  },
+  {
+    id: 2,
+    title: 'Xây Dựng Backend & RESTful API Chuyên Nghiệp',
+    description: 'Phát triển hệ thống backend chuẩn module bằng NestJS, cung cấp các endpoint an toàn, bảo mật và tốc độ phản hồi nhanh.',
+    icon: 'server',
+    features: [
+      'Kiến trúc phân tầng Clean Architecture',
+      'Xác thực người dùng qua JWT & Phân quyền RBAC',
+      'Kiểm tra hợp lệ dữ liệu chặt chẽ qua DTO',
+      'Tích hợp tài liệu Swagger UI tự động',
+    ],
+    pricing_note: 'Linh hoạt theo module',
+    sort_order: 2,
+  },
+  {
+    id: 3,
+    title: 'Thiết Kế CSDL & Tối Ưu Truy Vấn SQL',
+    description: 'Lập kế hoạch lược đồ quan hệ ERD chuẩn 3NF, xử lý Transaction ACID và tối ưu hiệu năng trên Neon PostgreSQL hoặc MySQL.',
+    icon: 'database',
+    features: [
+      'Lược đồ CSDL quan hệ chuẩn hóa 3NF',
+      'Tích hợp TypeORM Entity & Migration tự động',
+      'Cấu hình kết nối SSL mã hóa an toàn',
+      'Tối ưu hóa câu truy vấn phức tạp & Index',
+    ],
+    pricing_note: 'Tư vấn & Triển khai',
+    sort_order: 3,
+  },
+  {
+    id: 4,
+    title: 'Triển Khai Cloud & Bảo Trì Hệ Thống Web',
+    description: 'Đóng gói, cấu hình CI/CD và triển khai ứng dụng lên các nền tảng Cloud hiện đại như Vercel (Frontend) và Wispbyte (Backend).',
+    icon: 'cloud',
+    features: [
+      'Triển khai Frontend Next.js lên Vercel',
+      'Triển khai Backend NestJS lên Wispbyte Node.js Hosting',
+      'Cấu hình SSL, CORS và biến môi trường bảo mật',
+      'Giám sát hoạt động và bảo trì hệ thống 24/7',
+    ],
+    pricing_note: 'Trọn gói / Hàng tháng',
+    sort_order: 4,
+  },
+];
+
+export async function getServices(): Promise<{ data: Service[]; isLive: boolean }> {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE_URL}/api/services`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (json.data && Array.isArray(json.data) && json.data.length > 0) {
+      return { data: json.data, isLive: true };
+    }
+  } catch (err) {
+    console.warn('⚠️ [API Services] Không thể kết nối API Backend, sử dụng dữ liệu fallback:', err);
+  }
+  return { data: FALLBACK_SERVICES, isLive: false };
 }
 
 export async function getProjects(): Promise<{ data: Project[]; isLive: boolean }> {
